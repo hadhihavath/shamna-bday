@@ -443,7 +443,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 3rem;
     flex-wrap: wrap;
   }
@@ -462,7 +462,7 @@
   .phase-item:hover { opacity: 0.85; }
 
   .phase-moon {
-    width: 50px; height: 50px;
+    width: 80px; height: 80px;
     border-radius: 50%;
     background: var(--moon);
     position: relative;
@@ -471,7 +471,7 @@
   }
 
   .phase-label {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     color: var(--amber);
     text-transform: uppercase;
@@ -823,7 +823,7 @@
 
     /* Moon phase */
     .phase-row { gap: 0.6rem; }
-    .phase-moon { width: 38px; height: 38px; }
+    .phase-moon { width: 56px; height: 56px; }
     .phase-label { font-size: 0.55rem; letter-spacing: 0.1em; }
     .birthday-phase { padding: 1.5rem 1rem; }
     .birthday-phase p { font-size: 0.95rem; }
@@ -863,6 +863,7 @@
     .passions-grid { grid-template-columns: 1fr 1fr; }
     .passion-card:first-child { grid-row: span 2; aspect-ratio: unset; }
   }
+
 </style>
 </head>
 <body>
@@ -895,13 +896,62 @@
   <span class="hero-date">March 18 · 2003 · A Star Was Born</span>
   <h1 class="hero-title">Happy Birthday</h1>
   <h2 class="hero-name">Shamna</h2>
-  <p class="hero-sub">Makeup Artist · Designer · Wanderer · Moon Child</p>
+  <p class="hero-sub">Makeup Artist · Fashion Designer · Wanderer · Moon Child</p>
 
   <div class="scroll-hint">
     <span>Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
+
+<!-- ======= MOON PHASE ======= -->
+<section id="moonphase">
+  <div class="reveal">
+    <span class="section-label">The night you were born</span>
+    <h2 class="section-title">Your Moon</h2>
+  </div>
+
+  <div class="phase-row reveal">
+    <!-- Moon phases visual -->
+    <div class="phase-item">
+      <div class="phase-moon" style="background: radial-gradient(circle, #f5e6c8 50%, transparent 50%); box-shadow: inset 40px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Waning Crescent</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="box-shadow: inset 32px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Last Quarter</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="box-shadow: inset 12px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Waning Gibbous</span>
+    </div>
+    <div class="phase-item active">
+      <div class="phase-moon" style="box-shadow: 0 0 40px 10px rgba(245,230,200,0.5), 0 0 80px 20px rgba(201,125,46,0.2)"></div>
+      <span class="phase-label">✦ Full Moon ✦</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="box-shadow: inset -12px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Waxing Gibbous</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="box-shadow: inset -32px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">First Quarter</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="background: radial-gradient(circle, transparent 50%, #f5e6c8 50%); box-shadow: inset -40px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Waxing Crescent</span>
+    </div>
+  </div>
+
+  <div class="birthday-phase reveal">
+    <p>
+      On <em>March 18, 2003</em>, the moon glowed in its <strong>Waxing Gibbous</strong> phase —
+      almost full, building toward brilliance. Just like you, Shamna — always growing,
+      always becoming more luminous. The moon knew that night a light was entering the world.
+    </p>
+  </div>
+</section>
+
 
 <!-- ======= MESSAGE ======= -->
 <section id="message">
@@ -912,8 +962,8 @@
     <div class="big-quote">"</div>
     <p class="message-text">
       On this beautiful day — the 18th of March — the world became more radiant when <em>you</em> arrived in it.
-      You are someone who sees beauty in the moonlight on a far-off shore, who turns faces into masterpieces,
-      who designs worlds where art and soul meet. Your <em>amber eyes</em> carry the warmth of every sunset
+      You are someone who sees beauty in the moonlight on a far-off shore, who turns faces into masterpieces, who drapes fabric into
+      poetry as a <em>fashion designer</em>, and who creates worlds where art and soul meet. Your <em>amber eyes</em> carry the warmth of every sunset
       you've ever chased, and every horizon you've yet to discover.
       <br><br>
       Here's to <em>23 beautiful years</em> of being exactly, wonderfully, breathtakingly <em>you</em>.
@@ -1048,8 +1098,8 @@
         </div>
         <div class="passion-info">
           <span class="passion-icon">✏</span>
-          <span class="passion-name">Designer</span>
-          <p class="passion-desc">Vision made visible — every line, every form, a piece of her soul.</p>
+          <span class="passion-name">Fashion Designer</span>
+          <p class="passion-desc">Every stitch a statement, every silhouette a story only she can tell.</p>
         </div>
       </div>
     </div>
@@ -1057,62 +1107,14 @@
   </div>
 </section>
 
-<!-- ======= MOON PHASE ======= -->
-<section id="moonphase">
-  <div class="reveal">
-    <span class="section-label">The night you were born</span>
-    <h2 class="section-title">Your Moon</h2>
-  </div>
-
-  <div class="phase-row reveal">
-    <!-- Moon phases visual -->
-    <div class="phase-item">
-      <div class="phase-moon" style="background: radial-gradient(circle, #f5e6c8 50%, transparent 50%); box-shadow: inset 25px 0 0 rgba(6,3,16,0.95)"></div>
-      <span class="phase-label">Waning Crescent</span>
-    </div>
-    <div class="phase-item">
-      <div class="phase-moon" style="box-shadow: inset 20px 0 0 rgba(6,3,16,0.95)"></div>
-      <span class="phase-label">Last Quarter</span>
-    </div>
-    <div class="phase-item">
-      <div class="phase-moon" style="box-shadow: inset 8px 0 0 rgba(6,3,16,0.95)"></div>
-      <span class="phase-label">Waning Gibbous</span>
-    </div>
-    <div class="phase-item active">
-      <div class="phase-moon" style="box-shadow: 0 0 25px rgba(245,230,200,0.6)"></div>
-      <span class="phase-label">✦ Full Moon ✦</span>
-    </div>
-    <div class="phase-item">
-      <div class="phase-moon" style="box-shadow: inset -8px 0 0 rgba(6,3,16,0.95)"></div>
-      <span class="phase-label">Waxing Gibbous</span>
-    </div>
-    <div class="phase-item">
-      <div class="phase-moon" style="box-shadow: inset -20px 0 0 rgba(6,3,16,0.95)"></div>
-      <span class="phase-label">First Quarter</span>
-    </div>
-    <div class="phase-item">
-      <div class="phase-moon" style="background: radial-gradient(circle, transparent 50%, #f5e6c8 50%); box-shadow: inset -25px 0 0 rgba(6,3,16,0.95)"></div>
-      <span class="phase-label">Waxing Crescent</span>
-    </div>
-  </div>
-
-  <div class="birthday-phase reveal">
-    <p>
-      On <em>March 18, 2003</em>, the moon glowed in its <strong>Waxing Gibbous</strong> phase —
-      almost full, building toward brilliance. Just like you, Shamna — always growing,
-      always becoming more luminous. The moon knew that night a light was entering the world.
-    </p>
-  </div>
-</section>
-
 <!-- ======= MAKEUP ARTIST ======= -->
 <section id="artist">
   <div class="reveal">
     <span class="section-label">Your craft</span>
-    <h2 class="section-title">The Artist's Palette</h2>
-    <p style="font-style:italic; color:var(--rose-gold); max-width:500px; margin:0 auto; opacity:0.8; line-height:1.8">
-      You don't just apply makeup — you sculpt emotions, transform faces into living art,
-      and make people feel seen, beautiful, and powerful.
+    <h2 class="section-title">The Artist &amp; The Designer</h2>
+    <p style="font-style:italic; color:var(--rose-gold); max-width:520px; margin:0 auto; opacity:0.8; line-height:1.8">
+      You don't just apply makeup or sketch a silhouette — you sculpt confidence, drape dreams into fabric,
+      and turn every look into a living piece of art.
     </p>
   </div>
 
@@ -1147,17 +1149,61 @@
       <span>Highlighter</span>
     </div>
     <div class="tool-item">
-      <span class="tool-icon">👁</span>
-      <span>Eyeliner</span>
+      <span class="tool-icon">✂️</span>
+      <span>Scissors</span>
     </div>
     <div class="tool-item">
-      <span class="tool-icon">🎨</span>
-      <span>Foundation</span>
+      <span class="tool-icon">🧵</span>
+      <span>Thread</span>
     </div>
     <div class="tool-item">
-      <span class="tool-icon">⭐</span>
-      <span>Contour</span>
+      <span class="tool-icon">📐</span>
+      <span>Pattern</span>
     </div>
+    <div class="tool-item">
+      <span class="tool-icon">🪡</span>
+      <span>Needle</span>
+    </div>
+    <div class="tool-item">
+      <span class="tool-icon">👗</span>
+      <span>Silhouette</span>
+    </div>
+  </div>
+
+  <!-- Fashion Design SVG Sketch -->
+  <div class="reveal" style="margin-top:3rem; display:flex; justify-content:center;">
+    <svg width="340" height="200" viewBox="0 0 340 200" style="max-width:90vw;">
+      <defs>
+        <linearGradient id="sketchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="rgba(201,125,46,0.5)"/>
+          <stop offset="100%" stop-color="rgba(245,230,200,0.2)"/>
+        </linearGradient>
+      </defs>
+      <!-- Dress sketch lines — fashion illustration style -->
+      <!-- Bodice -->
+      <path d="M 120,30 L 100,80 L 90,130 L 170,138 L 250,130 L 240,80 L 220,30 Z"
+            fill="none" stroke="url(#sketchGrad)" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.7"/>
+      <!-- Neckline -->
+      <path d="M 120,30 Q 170,55 220,30" fill="none" stroke="rgba(232,168,74,0.6)" stroke-width="1.2"/>
+      <!-- Skirt flare -->
+      <path d="M 90,130 Q 50,170 40,200 L 300,200 Q 290,170 250,130 Z"
+            fill="rgba(201,125,46,0.06)" stroke="url(#sketchGrad)" stroke-width="1.5"/>
+      <!-- Waist seam -->
+      <line x1="93" y1="132" x2="247" y2="132" stroke="rgba(201,125,46,0.4)" stroke-width="1" stroke-dasharray="3,3"/>
+      <!-- Sketch construction lines -->
+      <line x1="170" y1="10" x2="170" y2="200" stroke="rgba(201,125,46,0.1)" stroke-width="0.8" stroke-dasharray="2,4"/>
+      <line x1="30" y1="90" x2="310" y2="90" stroke="rgba(201,125,46,0.1)" stroke-width="0.8" stroke-dasharray="2,4"/>
+      <!-- Measurement marks -->
+      <line x1="55" y1="130" x2="55" y2="200" stroke="rgba(232,168,74,0.3)" stroke-width="1"/>
+      <line x1="50" y1="130" x2="60" y2="130" stroke="rgba(232,168,74,0.3)" stroke-width="1"/>
+      <line x1="50" y1="200" x2="60" y2="200" stroke="rgba(232,168,74,0.3)" stroke-width="1"/>
+      <!-- Label text -->
+      <text x="280" y="60" font-family="Cormorant Garamond, serif" font-style="italic" font-size="10" fill="rgba(232,168,74,0.5)">Collection</text>
+      <text x="285" y="73" font-family="Cormorant Garamond, serif" font-style="italic" font-size="10" fill="rgba(232,168,74,0.4)">No. 23</text>
+      <!-- Needle and thread accent -->
+      <circle cx="290" cy="130" r="5" fill="none" stroke="rgba(201,153,122,0.5)" stroke-width="1.2"/>
+      <path d="M 290,125 L 290,100 Q 295,90 300,95" fill="none" stroke="rgba(201,153,122,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+    </svg>
   </div>
 </section>
 
@@ -1243,22 +1289,6 @@
       <!-- Highlight -->
       <circle cx="148" cy="68" r="8" fill="rgba(255,255,255,0.55)" clip-path="url(#eyeClip)"/>
       <circle cx="172" cy="74" r="3" fill="rgba(255,255,255,0.25)" clip-path="url(#eyeClip)"/>
-      <!-- Eyelashes top -->
-      <path d="M 30,80 Q 160,10 290,80" fill="none" stroke="#1a0808" stroke-width="3"/>
-      <!-- Lashes -->
-      <g stroke="#1a0808" stroke-width="2" stroke-linecap="round">
-        <line x1="60" y1="64" x2="52" y2="48"/>
-        <line x1="85" y1="48" x2="78" y2="32"/>
-        <line x1="112" y1="36" x2="107" y2="20"/>
-        <line x1="140" y1="30" x2="137" y2="14"/>
-        <line x1="160" y1="29" x2="160" y2="13"/>
-        <line x1="180" y1="30" x2="183" y2="14"/>
-        <line x1="208" y1="36" x2="213" y2="20"/>
-        <line x1="235" y1="48" x2="242" y2="32"/>
-        <line x1="260" y1="64" x2="268" y2="48"/>
-      </g>
-      <!-- Bottom lash line -->
-      <path d="M 30,80 Q 160,150 290,80" fill="none" stroke="#3d1505" stroke-width="1.5" opacity="0.6"/>
       <!-- Amber glow overlay -->
       <path d="M 30,80 Q 160,10 290,80 Q 160,150 30,80 Z" fill="rgba(232,168,74,0.06)"/>
     </svg>
@@ -1268,7 +1298,6 @@
     "Honey, amber, sunlight — all of autumn in one glance."
   </p>
 </section>
-
 <!-- ======= WISHES ======= -->
 <section id="wishes">
   <div class="reveal">
@@ -1287,7 +1316,7 @@
     </div>
     <div class="wish-item">
       <div class="wish-num">03 · Craft</div>
-      <div class="wish-text">May your hands keep creating magic — in brushstrokes, in beauty, in design.</div>
+      <div class="wish-text">May your hands keep creating magic — in brushstrokes, in beauty, in every stitch and silhouette.</div>
     </div>
     <div class="wish-item">
       <div class="wish-num">04 · Confidence</div>
@@ -1356,7 +1385,8 @@ window.addEventListener('resize', resize);
 
 function initStars() {
   stars = [];
-  for (let i = 0; i < 260; i++) {
+  const count = window.innerWidth < 768 ? 120 : 260;
+  for (let i = 0; i < count; i++) {
     stars.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height * 0.85,
@@ -1421,7 +1451,8 @@ animateStars();
 // ======= FLOATING PETALS =======
 function createPetals() {
   const hero = document.getElementById('hero');
-  for (let i = 0; i < 18; i++) {
+  const petalCount = window.innerWidth < 768 ? 8 : 18;
+  for (let i = 0; i < petalCount; i++) {
     const p = document.createElement('div');
     p.className = 'petal';
     p.style.left = Math.random() * 100 + 'vw';
@@ -1482,6 +1513,34 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// ======= TOUCH SPARKLE EFFECT =======
+function createTouchSparkle(x, y) {
+  const colors = ['#e8a84a','#f5e6c8','#c9997a','#d4a0c0'];
+  for (let i = 0; i < 6; i++) {
+    const spark = document.createElement('div');
+    const angle = (i / 6) * Math.PI * 2;
+    const dist = 30 + Math.random() * 20;
+    spark.style.cssText = `
+      position:fixed; width:5px; height:5px; border-radius:50%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      left:${x}px; top:${y}px; pointer-events:none; z-index:9999;
+      transform:translate(-50%,-50%);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity:1;
+    `;
+    document.body.appendChild(spark);
+    requestAnimationFrame(() => {
+      spark.style.transform = `translate(${Math.cos(angle)*dist - 2.5}px, ${Math.sin(angle)*dist - 2.5}px)`;
+      spark.style.opacity = '0';
+    });
+    setTimeout(() => spark.remove(), 600);
+  }
+}
+document.addEventListener('touchstart', e => {
+  const t = e.touches[0];
+  createTouchSparkle(t.clientX, t.clientY);
+}, { passive: true });
+
 // ======= EYE HOVER =======
 const eyeSvg = document.getElementById('eyeSvg');
 if (eyeSvg) {
@@ -1489,7 +1548,6 @@ if (eyeSvg) {
     const rect = eyeSvg.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    // Subtle pupil follow
     const cx = 160, cy = 80;
     const dx = (x - cx) * 0.04;
     const dy = (y - cy) * 0.04;
