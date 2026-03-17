@@ -33,7 +33,7 @@
     cursor: none;
   }
 
-  /* Custom Cursor */
+  /* Custom Cursor - desktop only */
   .cursor {
     width: 14px; height: 14px;
     background: var(--amber-glow);
@@ -45,6 +45,7 @@
     transition: transform 0.1s ease, opacity 0.3s;
     box-shadow: 0 0 20px var(--amber), 0 0 40px var(--amber-glow);
     mix-blend-mode: screen;
+    display: none;
   }
   .cursor-trail {
     width: 30px; height: 30px;
@@ -56,6 +57,12 @@
     transform: translate(-50%, -50%);
     transition: all 0.25s ease;
     opacity: 0.4;
+    display: none;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    body { cursor: none; }
+    .cursor { display: block; }
+    .cursor-trail { display: block; }
   }
 
   /* ======= HERO SECTION ======= */
@@ -759,14 +766,102 @@
   }
   .nav-dot.active { background: var(--amber-glow); transform: scale(1.5); }
 
-  /* Responsive */
+  /* ======= TOUCH / MOBILE INTERACTION ======= */
+  /* On touch: passion info always visible */
+  @media (hover: none) {
+    .passion-info { transform: translateY(0) !important; }
+    .passion-card:active .passion-bg { transform: scale(1.04); }
+    .swatch:active { transform: scale(1.3) translateY(-8px); }
+    .tool-item:active { opacity: 1; transform: translateY(-5px); }
+    .dest-card:active { border-color: rgba(201,125,46,0.5); }
+    .wish-item:active { background: rgba(201,125,46,0.09); }
+  }
+
+  /* ======= MOBILE LAYOUT ======= */
   @media (max-width: 768px) {
+    section { padding: 4rem 1.2rem; }
+
+    /* Nav dots — bottom bar on mobile */
+    .nav-dots {
+      right: auto;
+      bottom: 1rem;
+      top: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      flex-direction: row;
+      gap: 0.6rem;
+      background: rgba(6,3,16,0.7);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(201,125,46,0.2);
+      backdrop-filter: blur(10px);
+    }
+    .nav-dot.active { transform: scale(1.5); }
+
+    /* Hero */
+    .moon-container { top: 5%; right: 5%; }
+    .moon { width: 75px; height: 75px; }
+    .hero-sub { font-size: 0.85rem; letter-spacing: 0.08em; padding: 0 1rem; text-align: center; }
+    .hero-date { font-size: 0.55rem; letter-spacing: 0.3em; }
+
+    /* Message */
+    .message-card { padding: 2.5rem 1.5rem; }
+    .message-text { font-size: 1.05rem; line-height: 1.9; }
+    .age-badge { font-size: 0.65rem; padding: 0.6rem 1rem; letter-spacing: 0.15em; flex-wrap: wrap; justify-content: center; gap: 0.4rem; }
+
+    /* Passions grid — single column on small, 2 col on medium */
+    .passions-grid {
+      grid-template-columns: 1fr;
+      gap: 3px;
+      margin-top: 2rem;
+    }
+    .passion-card { aspect-ratio: 16/9; }
+    .passion-card:first-child { grid-row: auto; aspect-ratio: 16/9; }
+    .passion-info { transform: translateY(0); padding: 1rem 1.2rem; }
+    .passion-name { font-size: 0.65rem; }
+    .passion-desc { font-size: 0.85rem; }
+
+    /* Moon phase */
+    .phase-row { gap: 0.6rem; }
+    .phase-moon { width: 38px; height: 38px; }
+    .phase-label { font-size: 0.55rem; letter-spacing: 0.1em; }
+    .birthday-phase { padding: 1.5rem 1rem; }
+    .birthday-phase p { font-size: 0.95rem; }
+
+    /* Palette */
+    .palette { gap: 0.7rem; }
+    .swatch { width: 44px; height: 44px; }
+    .tools-row { gap: 1.2rem; }
+    .tool-item { font-size: 0.65rem; }
+    .tool-icon { font-size: 1.6rem; }
+
+    /* Portrait */
+    #portrait img { width: 90vw !important; max-width: 340px !important; }
+
+    /* Eye SVG */
+    #eyeSvg { width: 90vw; max-width: 320px; height: auto; }
+
+    /* Wishes */
+    .wishes-list { grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
+    .wish-item { padding: 1.5rem 1.2rem; }
+    .wish-text { font-size: 1.15rem; }
+
+    /* Finale */
+    #finale { padding: 5rem 1.5rem 4rem; }
+  }
+
+  @media (max-width: 480px) {
+    .passions-grid { grid-template-columns: 1fr; }
+    .phase-row { gap: 0.4rem; }
+    .phase-moon { width: 30px; height: 30px; }
+    .phase-label { display: none; }
+    .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+    .message-card { padding: 2rem 1rem; }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
     .passions-grid { grid-template-columns: 1fr 1fr; }
-    .passion-card:first-child { grid-row: auto; }
-    .passion-info { transform: translateY(0); }
-    .phase-row { gap: 1rem; }
-    .moon-container { width: 80px; height: 80px; top: 5%; right: 5%; }
-    .moon { width: 80px; height: 80px; }
+    .passion-card:first-child { grid-row: span 2; aspect-ratio: unset; }
   }
 </style>
 </head>
@@ -1102,7 +1197,7 @@
 <section id="eyes">
   <div class="reveal">
     <span class="section-label">Your signature</span>
-    <h2 class="section-title">Those Amber Green Eyes</h2>
+    <h2 class="section-title">Those Amber Eyes</h2>
     <p style="font-style:italic; color:var(--rose-gold); max-width:480px; margin:0 auto 2rem; opacity:0.8; line-height:1.8">
       Warm as the setting sun, deep as aged honey — your eyes hold entire worlds.
     </p>
@@ -1112,11 +1207,11 @@
     <svg width="320" height="160" viewBox="0 0 320 160" id="eyeSvg">
       <defs>
         <radialGradient id="irisGrad" cx="42%" cy="40%">
-          <stop offset="0%" stop-color="#d4e858"/>
-          <stop offset="20%" stop-color="#aac822"/>
-          <stop offset="48%" stop-color="#6a9010"/>
-          <stop offset="72%" stop-color="#c97d2e"/>
-          <stop offset="100%" stop-color="#5a3a05"/>
+          <stop offset="0%" stop-color="#f5c842"/>
+          <stop offset="25%" stop-color="#d4891a"/>
+          <stop offset="55%" stop-color="#9a5a0a"/>
+          <stop offset="80%" stop-color="#6b3a05"/>
+          <stop offset="100%" stop-color="#3d1f02"/>
         </radialGradient>
         <radialGradient id="pupilGrad" cx="40%" cy="35%">
           <stop offset="0%" stop-color="#2a1505"/>
@@ -1170,7 +1265,7 @@
   </div>
 
   <p class="reveal" style="font-style:italic; color:rgba(245,230,200,0.6); font-size:1.1rem; letter-spacing:0.1em; margin-top:1rem">
-    "Amber and green, like sunlight through leaves — rare, warm, and unforgettable."
+    "Honey, amber, sunlight — all of autumn in one glance."
   </p>
 </section>
 
