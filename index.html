@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Shamna 🌙</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --moon: #f5e6c8;
+    --amber: #c97d2e;
+    --amber-glow: #e8a84a;
+    --amber-deep: #7a4a10;
+    --dusk: #0a0614;
+    --midnight: #060310;
+    --deep-space: #0d0820;
+    --star: #fff8e7;
+    --rose-gold: #c9997a;
+    --blush: #e8c4b8;
+    --sage: #8faa8a;
+    --horizon: #1a0a2e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--midnight);
+    color: var(--moon);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom Cursor */
+  .cursor {
+    width: 14px; height: 14px;
+    background: var(--amber-glow);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, opacity 0.3s;
+    box-shadow: 0 0 20px var(--amber), 0 0 40px var(--amber-glow);
+    mix-blend-mode: screen;
+  }
+  .cursor-trail {
+    width: 30px; height: 30px;
+    border: 1px solid var(--amber);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: all 0.25s ease;
+    opacity: 0.4;
+  }
+
+  /* ======= HERO SECTION ======= */
+  #hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: radial-gradient(ellipse 80% 60% at 50% 100%, #1a0a2e 0%, var(--midnight) 70%);
+  }
+
+  /* Sky canvas */
+  #starCanvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+  }
+
+  /* Moon */
+  .moon-container {
+    position: absolute;
+    top: 8%;
+    right: 12%;
+    z-index: 2;
+    animation: moonFloat 8s ease-in-out infinite;
+  }
+  .moon {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 38%, #fff8e1, #f5e6c8 40%, #d4b483 75%, #b8924a);
+    box-shadow:
+      0 0 40px 15px rgba(245,230,200,0.35),
+      0 0 80px 30px rgba(201,125,46,0.2),
+      inset -20px -10px 40px rgba(100,60,10,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .moon::before {
+    content: '';
+    position: absolute;
+    width: 20px; height: 20px;
+    background: rgba(180,140,80,0.35);
+    border-radius: 50%;
+    top: 25%; left: 20%;
+    box-shadow: 25px 15px 0 8px rgba(180,140,80,0.2), 10px 45px 0 5px rgba(180,140,80,0.25), 45px 50px 0 3px rgba(180,140,80,0.15);
+  }
+  .moon::after {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    top: 0; left: 12%;
+    background: radial-gradient(circle at 60% 40%, transparent 45%, rgba(30,10,5,0.18) 100%);
+  }
+
+  @keyframes moonFloat {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-18px) rotate(3deg); }
+  }
+
+  /* Hero Text */
+  .hero-date {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(0.6rem, 1.2vw, 0.85rem);
+    letter-spacing: 0.5em;
+    color: var(--amber-glow);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+
+  .hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2.2rem, 6vw, 5.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--amber-glow) 0%, var(--moon) 40%, var(--amber-glow) 65%, var(--rose-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    line-height: 1.1;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+    filter: drop-shadow(0 0 30px rgba(232,168,74,0.5));
+  }
+
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: clamp(3.5rem, 10vw, 9rem);
+    color: var(--moon);
+    text-align: center;
+    line-height: 0.9;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.1s forwards;
+    text-shadow: 0 0 60px rgba(245,230,200,0.3), 0 0 120px rgba(201,125,46,0.2);
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    color: var(--rose-gold);
+    letter-spacing: 0.15em;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.5s forwards;
+    margin-top: 0.5rem;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 2.2s forwards;
+  }
+  .scroll-hint span {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--amber);
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--amber-glow), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  /* Floating petals */
+  .petal {
+    position: absolute;
+    width: 6px; height: 10px;
+    background: var(--rose-gold);
+    border-radius: 50% 0 50% 0;
+    opacity: 0;
+    animation: petalFall linear infinite;
+    z-index: 1;
+  }
+
+  @keyframes petalFall {
+    0% { opacity: 0; transform: translateY(-20px) rotate(0deg); }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { opacity: 0; transform: translateY(100vh) rotate(720deg) translateX(80px); }
+  }
+
+  /* ======= SECTIONS COMMON ======= */
+  section {
+    position: relative;
+    width: 100%;
+    padding: 6rem 2rem;
+    overflow: hidden;
+  }
+
+  .section-label {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    color: var(--amber-glow);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ======= MESSAGE SECTION ======= */
+  #message {
+    background: linear-gradient(180deg, var(--midnight) 0%, #0f0820 50%, var(--midnight) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .message-card {
+    max-width: 780px;
+    position: relative;
+    padding: 4rem 3rem;
+    border: 1px solid rgba(201,125,46,0.25);
+    background: linear-gradient(135deg, rgba(201,125,46,0.05) 0%, transparent 50%, rgba(201,125,46,0.03) 100%);
+  }
+  .message-card::before, .message-card::after {
+    content: '✦';
+    position: absolute;
+    font-size: 1.5rem;
+    color: var(--amber-glow);
+    opacity: 0.5;
+  }
+  .message-card::before { top: 1rem; left: 1.5rem; }
+  .message-card::after { bottom: 1rem; right: 1.5rem; }
+
+  .message-text {
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    line-height: 2;
+    color: var(--moon);
+    opacity: 0.9;
+    font-weight: 300;
+  }
+
+  .message-text em {
+    color: var(--amber-glow);
+    font-style: italic;
+  }
+
+  .big-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    color: var(--amber-glow);
+    opacity: 0.08;
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  /* Age Reveal */
+  .age-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 2.5rem;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--amber);
+    background: rgba(201,125,46,0.1);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    color: var(--amber-glow);
+    text-transform: uppercase;
+  }
+
+  /* ======= PASSIONS SECTION ======= */
+  #passions {
+    background: var(--deep-space);
+  }
+
+  .passions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+  }
+
+  .passion-card {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .passion-card:first-child { grid-row: span 2; aspect-ratio: unset; }
+
+  .passion-bg {
+    width: 100%; height: 100%;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .passion-card:hover .passion-bg { transform: scale(1.08); }
+
+  /* Travel Card */
+  .travel-bg {
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(142,210,190,0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 80%, rgba(51,102,153,0.4) 0%, transparent 50%),
+      linear-gradient(160deg, #0a1628 0%, #0d2240 30%, #1a3a5c 60%, #0a1628 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+  }
+
+  /* Moon Card */
+  .moon-bg {
+    background: linear-gradient(160deg, #050210 0%, #0d0820 40%, #1a0a2e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /* Makeup Card */
+  .makeup-bg {
+    background:
+      radial-gradient(ellipse at 70% 30%, rgba(201,125,46,0.25) 0%, transparent 60%),
+      linear-gradient(135deg, #1a0808 0%, #2d1010 40%, #1a0a08 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+  }
+
+  /* Design Card */
+  .design-bg {
+    background: linear-gradient(135deg, #080a14 0%, #0e1420 50%, #14101e 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .passion-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(6,3,16,0.95) 0%, transparent 100%);
+    transform: translateY(40%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .passion-card:hover .passion-info { transform: translateY(0); }
+
+  .passion-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .passion-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    color: var(--amber-glow);
+    text-transform: uppercase;
+  }
+  .passion-desc {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: rgba(245,230,200,0.7);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+
+  /* SVG Illustrations inside cards */
+  .card-illustration {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  /* ======= MOON PHASE SECTION ======= */
+  #moonphase {
+    background: var(--midnight);
+    text-align: center;
+    padding: 6rem 2rem 8rem;
+  }
+
+  .phase-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .phase-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    opacity: 0.4;
+    transition: opacity 0.4s, transform 0.4s;
+    cursor: pointer;
+  }
+
+  .phase-item.active { opacity: 1; transform: scale(1.15); }
+  .phase-item:hover { opacity: 0.85; }
+
+  .phase-moon {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: var(--moon);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(245,230,200,0.3);
+  }
+
+  .phase-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--amber);
+    text-transform: uppercase;
+  }
+
+  .birthday-phase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 1px solid rgba(201,125,46,0.3);
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(201,125,46,0.05);
+  }
+  .birthday-phase p {
+    font-style: italic;
+    color: var(--moon);
+    opacity: 0.8;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+
+  /* ======= MAKEUP ARTIST SECTION ======= */
+  #artist {
+    background: linear-gradient(180deg, var(--midnight) 0%, #0f0510 50%, var(--midnight) 100%);
+    text-align: center;
+  }
+
+  .palette {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem auto 2rem;
+    flex-wrap: wrap;
+    max-width: 600px;
+  }
+
+  .swatch {
+    width: 55px; height: 55px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .swatch:hover { transform: scale(1.25) translateY(-8px); }
+  .swatch::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: -1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--moon);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    font-style: italic;
+  }
+  .swatch:hover::after { opacity: 0.8; }
+
+  .tools-row {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--amber);
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .tool-item:hover { opacity: 1; transform: translateY(-5px); }
+  .tool-icon { font-size: 2rem; }
+
+  /* ======= TRAVEL MAP SECTION ======= */
+  #travel {
+    background: #040a14;
+    position: relative;
+  }
+
+  .globe-wrapper {
+    max-width: 900px;
+    margin: 3rem auto 0;
+    position: relative;
+  }
+
+  .destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5px;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dest-card {
+    padding: 2rem 1.5rem;
+    border: 1px solid rgba(201,125,46,0.12);
+    background: rgba(10,6,20,0.8);
+    transition: border-color 0.4s, background 0.4s, transform 0.4s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .dest-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,125,46,0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .dest-card:hover { border-color: rgba(201,125,46,0.5); transform: translateY(-4px); }
+  .dest-card:hover::before { opacity: 1; }
+
+  .dest-flag { font-size: 2rem; display: block; margin-bottom: 0.8rem; }
+  .dest-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--moon);
+  }
+  .dest-vibe {
+    font-size: 0.8rem;
+    color: var(--amber);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+    opacity: 0.7;
+  }
+  .dest-note {
+    font-size: 0.9rem;
+    color: rgba(245,230,200,0.6);
+    font-style: italic;
+    margin-top: 0.6rem;
+    line-height: 1.6;
+  }
+
+  /* ======= EYES SECTION ======= */
+  #eyes {
+    background: var(--midnight);
+    text-align: center;
+    padding: 6rem 2rem;
+  }
+
+  .amber-eye-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+  }
+
+  .eye-wrapper {
+    position: relative;
+    width: 280px;
+    height: 140px;
+    cursor: pointer;
+  }
+
+  /* ======= WISHES SECTION ======= */
+  #wishes {
+    background: linear-gradient(180deg, var(--midnight) 0%, #0a0320 100%);
+    text-align: center;
+  }
+
+  .wishes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 960px;
+    margin: 3rem auto 0;
+  }
+
+  .wish-item {
+    padding: 2rem;
+    border-top: 2px solid var(--amber);
+    background: rgba(201,125,46,0.04);
+    text-align: left;
+    transition: background 0.4s;
+  }
+  .wish-item:hover { background: rgba(201,125,46,0.09); }
+
+  .wish-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--amber-glow);
+    opacity: 0.6;
+    text-transform: uppercase;
+  }
+  .wish-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    margin-top: 0.7rem;
+    line-height: 1.5;
+    color: var(--moon);
+  }
+
+  /* ======= FINALE ======= */
+  #finale {
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, #1a0a2e 0%, var(--midnight) 70%);
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .finale-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    font-style: italic;
+    background: linear-gradient(135deg, var(--amber-glow), var(--moon), var(--rose-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+
+  .finale-from {
+    font-size: 1.1rem;
+    color: var(--amber);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .confetti-piece {
+    position: absolute;
+    width: 8px; height: 8px;
+    opacity: 0;
+    animation: confettiFall linear infinite;
+    border-radius: 1px;
+  }
+
+  @keyframes confettiFall {
+    0% { opacity: 0; transform: translateY(-20px) rotate(0deg); }
+    10% { opacity: 1; }
+    90% { opacity: 0.5; }
+    100% { opacity: 0; transform: translateY(100vh) rotate(900deg) translateX(100px); }
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Nav dots */
+  .nav-dots {
+    position: fixed;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    z-index: 100;
+  }
+  .nav-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(201,125,46,0.3);
+    border: 1px solid var(--amber);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .nav-dot.active { background: var(--amber-glow); transform: scale(1.5); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .passions-grid { grid-template-columns: 1fr 1fr; }
+    .passion-card:first-child { grid-row: auto; }
+    .passion-info { transform: translateY(0); }
+    .phase-row { gap: 1rem; }
+    .moon-container { width: 80px; height: 80px; top: 5%; right: 5%; }
+    .moon { width: 80px; height: 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- Nav Dots -->
+<nav class="nav-dots" id="navDots">
+  <div class="nav-dot active" data-section="hero" onclick="scrollTo(0,0)"></div>
+  <div class="nav-dot" data-section="message" onclick="document.getElementById('message').scrollIntoView({behavior:'smooth'})"></div>
+  <div class="nav-dot" data-section="passions" onclick="document.getElementById('passions').scrollIntoView({behavior:'smooth'})"></div>
+  <div class="nav-dot" data-section="moonphase" onclick="document.getElementById('moonphase').scrollIntoView({behavior:'smooth'})"></div>
+  <div class="nav-dot" data-section="artist" onclick="document.getElementById('artist').scrollIntoView({behavior:'smooth'})"></div>
+  <div class="nav-dot" data-section="travel" onclick="document.getElementById('travel').scrollIntoView({behavior:'smooth'})"></div>
+  <div class="nav-dot" data-section="eyes" onclick="document.getElementById('eyes').scrollIntoView({behavior:'smooth'})"></div>
+  <div class="nav-dot" data-section="wishes" onclick="document.getElementById('wishes').scrollIntoView({behavior:'smooth'})"></div>
+  <div class="nav-dot" data-section="finale" onclick="document.getElementById('finale').scrollIntoView({behavior:'smooth'})"></div>
+</nav>
+
+<!-- ======= HERO ======= -->
+<section id="hero">
+  <canvas id="starCanvas"></canvas>
+
+  <div class="moon-container">
+    <div class="moon"></div>
+  </div>
+
+  <span class="hero-date">March 18 · 2003 · A Star Was Born</span>
+  <h1 class="hero-title">Happy Birthday</h1>
+  <h2 class="hero-name">Shamna</h2>
+  <p class="hero-sub">Makeup Artist · Designer · Wanderer · Moon Child</p>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ======= MESSAGE ======= -->
+<section id="message">
+  <div class="reveal">
+    <span class="section-label">A note for you</span>
+  </div>
+  <div class="message-card reveal">
+    <div class="big-quote">"</div>
+    <p class="message-text">
+      On this beautiful day — the 18th of March — the world became more radiant when <em>you</em> arrived in it.
+      You are someone who sees beauty in the moonlight on a far-off shore, who turns faces into masterpieces,
+      who designs worlds where art and soul meet. Your <em>amber eyes</em> carry the warmth of every sunset
+      you've ever chased, and every horizon you've yet to discover.
+      <br><br>
+      Here's to <em>23 beautiful years</em> of being exactly, wonderfully, breathtakingly <em>you</em>.
+    </p>
+    <div class="age-badge">
+      ✦ &nbsp; Turning 23 &nbsp; ✦ &nbsp; March 18, 2026 &nbsp; ✦
+    </div>
+  </div>
+</section>
+
+<!-- ======= PASSIONS ======= -->
+<section id="passions">
+  <div style="text-align:center" class="reveal">
+    <span class="section-label">The things that make you, you</span>
+    <h2 class="section-title">Your Universe</h2>
+  </div>
+
+  <div class="passions-grid">
+
+    <!-- Travel -->
+    <div class="passion-card">
+      <div class="passion-bg travel-bg">
+        <!-- SVG mountains & horizon -->
+        <svg width="100%" height="100%" viewBox="0 0 400 600" style="position:absolute;inset:0;opacity:0.7" preserveAspectRatio="xMidYMid slice">
+          <!-- Stars -->
+          <circle cx="50" cy="80" r="1.5" fill="#fff" opacity="0.8"/>
+          <circle cx="120" cy="40" r="1" fill="#fff" opacity="0.6"/>
+          <circle cx="200" cy="60" r="1.5" fill="#fff" opacity="0.9"/>
+          <circle cx="300" cy="30" r="1" fill="#fff" opacity="0.7"/>
+          <circle cx="350" cy="90" r="2" fill="#fff" opacity="0.5"/>
+          <circle cx="80" cy="130" r="1" fill="#fff" opacity="0.6"/>
+          <circle cx="260" cy="110" r="1.5" fill="#fff" opacity="0.8"/>
+          <circle cx="340" cy="50" r="1" fill="#fff" opacity="0.4"/>
+          <!-- Aurora-like sky -->
+          <ellipse cx="200" cy="150" rx="180" ry="80" fill="rgba(100,180,160,0.12)"/>
+          <!-- Mountains -->
+          <polygon points="0,600 100,280 200,400 300,260 400,380 400,600" fill="#0a1628"/>
+          <polygon points="0,600 60,320 130,420 220,300 310,380 400,320 400,600" fill="#0d2240" opacity="0.8"/>
+          <!-- Reflection water -->
+          <rect x="0" y="480" width="400" height="120" fill="rgba(13,34,64,0.7)"/>
+          <ellipse cx="200" cy="490" rx="180" ry="20" fill="rgba(100,160,200,0.08)"/>
+          <!-- Reflection ripples -->
+          <line x1="80" y1="510" x2="160" y2="510" stroke="rgba(180,220,255,0.15)" stroke-width="1"/>
+          <line x1="220" y1="530" x2="340" y2="530" stroke="rgba(180,220,255,0.1)" stroke-width="1"/>
+        </svg>
+        <div class="passion-info">
+          <span class="passion-icon">✈</span>
+          <span class="passion-name">Wanderlust</span>
+          <p class="passion-desc">Every new place is a new chapter, every horizon a new dream.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Moon -->
+    <div class="passion-card">
+      <div class="passion-bg moon-bg">
+        <div class="card-illustration">
+          <svg width="180" height="180" viewBox="0 0 180 180">
+            <!-- Glow rings -->
+            <circle cx="90" cy="90" r="78" fill="none" stroke="rgba(245,230,200,0.05)" stroke-width="1"/>
+            <circle cx="90" cy="90" r="65" fill="none" stroke="rgba(245,230,200,0.08)" stroke-width="1"/>
+            <!-- Moon body -->
+            <circle cx="90" cy="90" r="52" fill="url(#moonGrad)"/>
+            <!-- Craters -->
+            <circle cx="70" cy="75" r="8" fill="rgba(160,120,60,0.3)"/>
+            <circle cx="108" cy="95" r="5" fill="rgba(160,120,60,0.25)"/>
+            <circle cx="82" cy="110" r="4" fill="rgba(160,120,60,0.2)"/>
+            <!-- Shadow -->
+            <circle cx="105" cy="85" r="52" fill="rgba(6,3,16,0.45)"/>
+            <defs>
+              <radialGradient id="moonGrad" cx="38%" cy="35%">
+                <stop offset="0%" stop-color="#fff8e1"/>
+                <stop offset="45%" stop-color="#f5e6c8"/>
+                <stop offset="80%" stop-color="#c9964a"/>
+                <stop offset="100%" stop-color="#8a5c1a"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="passion-info">
+          <span class="passion-icon">🌙</span>
+          <span class="passion-name">Moon Child</span>
+          <p class="passion-desc">She carries moonlight wherever she goes — serene, glowing, magnetic.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Makeup -->
+    <div class="passion-card">
+      <div class="passion-bg makeup-bg">
+        <div class="card-illustration">
+          <svg width="160" height="160" viewBox="0 0 160 160" opacity="0.6">
+            <!-- Lipstick -->
+            <rect x="68" y="50" width="24" height="50" rx="3" fill="#c0392b"/>
+            <polygon points="68,50 80,30 92,50" fill="#a93226"/>
+            <rect x="65" y="95" width="30" height="30" rx="2" fill="#922b21"/>
+            <!-- Brush -->
+            <rect x="110" y="40" width="8" height="70" rx="3" fill="#8a6a3a"/>
+            <ellipse cx="114" cy="38" rx="5" ry="12" fill="#c8a86e"/>
+            <!-- Mirror reflection sparkles -->
+            <circle cx="35" cy="65" r="3" fill="rgba(232,168,74,0.7)"/>
+            <circle cx="45" cy="45" r="2" fill="rgba(232,168,74,0.5)"/>
+            <circle cx="25" cy="85" r="2" fill="rgba(232,168,74,0.4)"/>
+          </svg>
+        </div>
+        <div class="passion-info">
+          <span class="passion-icon">💄</span>
+          <span class="passion-name">Makeup Artist</span>
+          <p class="passion-desc">She doesn't just do makeup — she sculpts confidence and art.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design -->
+    <div class="passion-card">
+      <div class="passion-bg design-bg">
+        <div class="card-illustration">
+          <svg width="170" height="170" viewBox="0 0 170 170" opacity="0.5">
+            <!-- Grid lines -->
+            <line x1="30" y1="0" x2="30" y2="170" stroke="rgba(201,125,46,0.3)" stroke-width="0.5"/>
+            <line x1="85" y1="0" x2="85" y2="170" stroke="rgba(201,125,46,0.3)" stroke-width="0.5"/>
+            <line x1="140" y1="0" x2="140" y2="170" stroke="rgba(201,125,46,0.3)" stroke-width="0.5"/>
+            <line x1="0" y1="40" x2="170" y2="40" stroke="rgba(201,125,46,0.3)" stroke-width="0.5"/>
+            <line x1="0" y1="85" x2="170" y2="85" stroke="rgba(201,125,46,0.3)" stroke-width="0.5"/>
+            <line x1="0" y1="130" x2="170" y2="130" stroke="rgba(201,125,46,0.3)" stroke-width="0.5"/>
+            <!-- Design elements -->
+            <rect x="40" y="50" width="40" height="55" fill="none" stroke="rgba(232,168,74,0.7)" stroke-width="1.5"/>
+            <circle cx="110" cy="78" r="25" fill="none" stroke="rgba(201,153,122,0.6)" stroke-width="1.5"/>
+            <line x1="40" y1="120" x2="140" y2="120" stroke="rgba(245,230,200,0.4)" stroke-width="1"/>
+            <polygon points="85,30 100,55 70,55" fill="rgba(201,125,46,0.4)" stroke="rgba(232,168,74,0.6)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="passion-info">
+          <span class="passion-icon">✏</span>
+          <span class="passion-name">Designer</span>
+          <p class="passion-desc">Vision made visible — every line, every form, a piece of her soul.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======= MOON PHASE ======= -->
+<section id="moonphase">
+  <div class="reveal">
+    <span class="section-label">The night you were born</span>
+    <h2 class="section-title">Your Moon</h2>
+  </div>
+
+  <div class="phase-row reveal">
+    <!-- Moon phases visual -->
+    <div class="phase-item">
+      <div class="phase-moon" style="background: radial-gradient(circle, #f5e6c8 50%, transparent 50%); box-shadow: inset 25px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Waning Crescent</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="box-shadow: inset 20px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Last Quarter</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="box-shadow: inset 8px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Waning Gibbous</span>
+    </div>
+    <div class="phase-item active">
+      <div class="phase-moon" style="box-shadow: 0 0 25px rgba(245,230,200,0.6)"></div>
+      <span class="phase-label">✦ Full Moon ✦</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="box-shadow: inset -8px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Waxing Gibbous</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="box-shadow: inset -20px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">First Quarter</span>
+    </div>
+    <div class="phase-item">
+      <div class="phase-moon" style="background: radial-gradient(circle, transparent 50%, #f5e6c8 50%); box-shadow: inset -25px 0 0 rgba(6,3,16,0.95)"></div>
+      <span class="phase-label">Waxing Crescent</span>
+    </div>
+  </div>
+
+  <div class="birthday-phase reveal">
+    <p>
+      On <em>March 18, 2003</em>, the moon glowed in its <strong>Waxing Gibbous</strong> phase —
+      almost full, building toward brilliance. Just like you, Shamna — always growing,
+      always becoming more luminous. The moon knew that night a light was entering the world.
+    </p>
+  </div>
+</section>
+
+<!-- ======= MAKEUP ARTIST ======= -->
+<section id="artist">
+  <div class="reveal">
+    <span class="section-label">Your craft</span>
+    <h2 class="section-title">The Artist's Palette</h2>
+    <p style="font-style:italic; color:var(--rose-gold); max-width:500px; margin:0 auto; opacity:0.8; line-height:1.8">
+      You don't just apply makeup — you sculpt emotions, transform faces into living art,
+      and make people feel seen, beautiful, and powerful.
+    </p>
+  </div>
+
+  <div class="palette reveal">
+    <div class="swatch" style="background: radial-gradient(circle, #8B1A1A, #5C0000)" data-name="Deep Crimson"
+         onmouseover="this.style.boxShadow='0 0 20px rgba(139,26,26,0.7)'" onmouseout="this.style.boxShadow=''"></div>
+    <div class="swatch" style="background: radial-gradient(circle, #c9997a, #a0704a)" data-name="Rose Gold"
+         onmouseover="this.style.boxShadow='0 0 20px rgba(201,153,122,0.7)'" onmouseout="this.style.boxShadow=''"></div>
+    <div class="swatch" style="background: radial-gradient(circle, #e8a84a, #c97d2e)" data-name="Amber Glow"
+         onmouseover="this.style.boxShadow='0 0 20px rgba(232,168,74,0.7)'" onmouseout="this.style.boxShadow=''"></div>
+    <div class="swatch" style="background: radial-gradient(circle, #d4a0c0, #a06080)" data-name="Dusty Mauve"
+         onmouseover="this.style.boxShadow='0 0 20px rgba(212,160,192,0.7)'" onmouseout="this.style.boxShadow=''"></div>
+    <div class="swatch" style="background: radial-gradient(circle, #3d2b1f, #1a0e0a)" data-name="Deep Mocha"
+         onmouseover="this.style.boxShadow='0 0 20px rgba(61,43,31,0.9)'" onmouseout="this.style.boxShadow=''"></div>
+    <div class="swatch" style="background: radial-gradient(circle, #f0d0b8, #d4a882)" data-name="Nude Beige"
+         onmouseover="this.style.boxShadow='0 0 20px rgba(240,208,184,0.7)'" onmouseout="this.style.boxShadow=''"></div>
+    <div class="swatch" style="background: radial-gradient(circle, #2c1810, #0f0505)" data-name="Midnight Plum"
+         onmouseover="this.style.boxShadow='0 0 20px rgba(44,24,16,0.9)'" onmouseout="this.style.boxShadow=''"></div>
+  </div>
+
+  <div class="tools-row reveal">
+    <div class="tool-item">
+      <span class="tool-icon">🖌</span>
+      <span>Brushes</span>
+    </div>
+    <div class="tool-item">
+      <span class="tool-icon">💄</span>
+      <span>Lipstick</span>
+    </div>
+    <div class="tool-item">
+      <span class="tool-icon">✨</span>
+      <span>Highlighter</span>
+    </div>
+    <div class="tool-item">
+      <span class="tool-icon">👁</span>
+      <span>Eyeliner</span>
+    </div>
+    <div class="tool-item">
+      <span class="tool-icon">🎨</span>
+      <span>Foundation</span>
+    </div>
+    <div class="tool-item">
+      <span class="tool-icon">⭐</span>
+      <span>Contour</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TRAVEL ======= -->
+<section id="travel">
+  <div style="text-align:center" class="reveal">
+    <span class="section-label">For the wanderer in you</span>
+    <h2 class="section-title">Dream Destinations</h2>
+    <p style="font-style:italic; color:var(--rose-gold); max-width:500px; margin:0 auto; opacity:0.8; line-height:1.8">
+      Places that are waiting for you — where the moonlight is different, the food is unforgettable,
+      and the streets hold stories.
+    </p>
+  </div>
+
+  <div class="destinations reveal">
+    <div class="dest-card">
+      <span class="dest-flag">🇮🇹</span>
+      <div class="dest-name">Santorini</div>
+      <div class="dest-vibe">Dreamy · Coastal · Golden</div>
+      <p class="dest-note">Sunsets that turn the sky the exact colour of your eyes. Blue domes, white walls, sea forever.</p>
+    </div>
+    <div class="dest-card">
+      <span class="dest-flag">🇯🇵</span>
+      <div class="dest-name">Kyoto</div>
+      <div class="dest-vibe">Serene · Ancient · Magical</div>
+      <p class="dest-note">Cherry blossoms at dawn, temples at dusk, and the world's most poetic stillness in between.</p>
+    </div>
+    <div class="dest-card">
+      <span class="dest-flag">🇲🇦</span>
+      <div class="dest-name">Marrakech</div>
+      <div class="dest-vibe">Vibrant · Spiced · Artistic</div>
+      <p class="dest-note">A city that smells like saffron and cedar — colour, craft, and culture at every corner.</p>
+    </div>
+    <div class="dest-card">
+      <span class="dest-flag">🇮🇸</span>
+      <div class="dest-name">Reykjavik</div>
+      <div class="dest-vibe">Northern Lights · Raw · Wild</div>
+      <p class="dest-note">Where the moon never really sets in summer, and the sky dances green and violet at night.</p>
+    </div>
+    <div class="dest-card">
+      <span class="dest-flag">🇲🇻</span>
+      <div class="dest-name">Maldives</div>
+      <div class="dest-vibe">Crystal · Serene · Endless</div>
+      <p class="dest-note">Bioluminescent nights, overwater bungalows, and water so clear it mirrors the moon perfectly.</p>
+    </div>
+    <div class="dest-card">
+      <span class="dest-flag">🇫🇷</span>
+      <div class="dest-name">Paris</div>
+      <div class="dest-vibe">Chic · Romantic · Timeless</div>
+      <p class="dest-note">The city of art and beauty — perfect for a designer and artist like you. Every street, a canvas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======= EYES ======= -->
+<section id="eyes">
+  <div class="reveal">
+    <span class="section-label">Your signature</span>
+    <h2 class="section-title">Those Amber Eyes</h2>
+    <p style="font-style:italic; color:var(--rose-gold); max-width:480px; margin:0 auto 2rem; opacity:0.8; line-height:1.8">
+      Warm as the setting sun, deep as aged honey — your eyes hold entire worlds.
+    </p>
+  </div>
+
+  <div class="amber-eye-container reveal">
+    <svg width="320" height="160" viewBox="0 0 320 160" id="eyeSvg">
+      <defs>
+        <radialGradient id="irisGrad" cx="42%" cy="40%">
+          <stop offset="0%" stop-color="#f5c842"/>
+          <stop offset="25%" stop-color="#d4891a"/>
+          <stop offset="55%" stop-color="#9a5a0a"/>
+          <stop offset="80%" stop-color="#6b3a05"/>
+          <stop offset="100%" stop-color="#3d1f02"/>
+        </radialGradient>
+        <radialGradient id="pupilGrad" cx="40%" cy="35%">
+          <stop offset="0%" stop-color="#2a1505"/>
+          <stop offset="100%" stop-color="#0a0502"/>
+        </radialGradient>
+        <filter id="eyeGlow">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <clipPath id="eyeClip">
+          <path d="M 30,80 Q 160,10 290,80 Q 160,150 30,80 Z"/>
+        </clipPath>
+      </defs>
+      <!-- Eye white -->
+      <path d="M 30,80 Q 160,10 290,80 Q 160,150 30,80 Z" fill="#f0e8d8" opacity="0.95"/>
+      <!-- Iris -->
+      <circle cx="160" cy="80" r="48" fill="url(#irisGrad)" clip-path="url(#eyeClip)" filter="url(#eyeGlow)"/>
+      <!-- Iris detail lines -->
+      <g clip-path="url(#eyeClip)" opacity="0.35">
+        <line x1="160" y1="32" x2="160" y2="128" stroke="#a06010" stroke-width="0.8"/>
+        <line x1="113" y1="46" x2="207" y2="114" stroke="#a06010" stroke-width="0.8"/>
+        <line x1="113" y1="114" x2="207" y2="46" stroke="#a06010" stroke-width="0.8"/>
+        <line x1="112" y1="80" x2="208" y2="80" stroke="#a06010" stroke-width="0.8"/>
+        <line x1="126" y1="47" x2="194" y2="113" stroke="#c8800a" stroke-width="0.5"/>
+        <line x1="126" y1="113" x2="194" y2="47" stroke="#c8800a" stroke-width="0.5"/>
+      </g>
+      <!-- Pupil -->
+      <circle cx="160" cy="80" r="22" fill="url(#pupilGrad)" clip-path="url(#eyeClip)"/>
+      <!-- Highlight -->
+      <circle cx="148" cy="68" r="8" fill="rgba(255,255,255,0.55)" clip-path="url(#eyeClip)"/>
+      <circle cx="172" cy="74" r="3" fill="rgba(255,255,255,0.25)" clip-path="url(#eyeClip)"/>
+      <!-- Eyelashes top -->
+      <path d="M 30,80 Q 160,10 290,80" fill="none" stroke="#1a0808" stroke-width="3"/>
+      <!-- Lashes -->
+      <g stroke="#1a0808" stroke-width="2" stroke-linecap="round">
+        <line x1="60" y1="64" x2="52" y2="48"/>
+        <line x1="85" y1="48" x2="78" y2="32"/>
+        <line x1="112" y1="36" x2="107" y2="20"/>
+        <line x1="140" y1="30" x2="137" y2="14"/>
+        <line x1="160" y1="29" x2="160" y2="13"/>
+        <line x1="180" y1="30" x2="183" y2="14"/>
+        <line x1="208" y1="36" x2="213" y2="20"/>
+        <line x1="235" y1="48" x2="242" y2="32"/>
+        <line x1="260" y1="64" x2="268" y2="48"/>
+      </g>
+      <!-- Bottom lash line -->
+      <path d="M 30,80 Q 160,150 290,80" fill="none" stroke="#3d1505" stroke-width="1.5" opacity="0.6"/>
+      <!-- Amber glow overlay -->
+      <path d="M 30,80 Q 160,10 290,80 Q 160,150 30,80 Z" fill="rgba(232,168,74,0.06)"/>
+    </svg>
+  </div>
+
+  <p class="reveal" style="font-style:italic; color:rgba(245,230,200,0.6); font-size:1.1rem; letter-spacing:0.1em; margin-top:1rem">
+    "Honey, amber, sunlight — all of autumn in one glance."
+  </p>
+</section>
+
+<!-- ======= WISHES ======= -->
+<section id="wishes">
+  <div class="reveal">
+    <span class="section-label">From the heart</span>
+    <h2 class="section-title">23 Wishes for You</h2>
+  </div>
+
+  <div class="wishes-list reveal">
+    <div class="wish-item">
+      <div class="wish-num">01 · Wanderlust</div>
+      <div class="wish-text">May every passport stamp be a new story, every flight a new beginning.</div>
+    </div>
+    <div class="wish-item">
+      <div class="wish-num">02 · Moonlight</div>
+      <div class="wish-text">May the moon always shine soft and kind on your path, wherever it leads.</div>
+    </div>
+    <div class="wish-item">
+      <div class="wish-num">03 · Craft</div>
+      <div class="wish-text">May your hands keep creating magic — in brushstrokes, in beauty, in design.</div>
+    </div>
+    <div class="wish-item">
+      <div class="wish-num">04 · Confidence</div>
+      <div class="wish-text">May you always know how brilliant you truly are — no mirrors needed.</div>
+    </div>
+    <div class="wish-item">
+      <div class="wish-num">05 · Adventure</div>
+      <div class="wish-text">May this year hold more adventures than you could ever have planned.</div>
+    </div>
+    <div class="wish-item">
+      <div class="wish-num">06 · Joy</div>
+      <div class="wish-text">May laughter find you in the most unexpected, wonderful moments.</div>
+    </div>
+    <div class="wish-item">
+      <div class="wish-num">07 · Art</div>
+      <div class="wish-text">May your artistry continue to take people's breath away, year after year.</div>
+    </div>
+    <div class="wish-item">
+      <div class="wish-num">08 · Peace</div>
+      <div class="wish-text">May you always find that quiet place inside yourself — serene as moonrise.</div>
+    </div>
+    <div class="wish-item">
+      <div class="wish-num">09 · Beauty</div>
+      <div class="wish-text">May you see the beauty you create in others reflected back in yourself always.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FINALE ======= -->
+<section id="finale">
+  <h2 class="finale-title reveal">Here's to you, Shamna 🌙</h2>
+  <p class="reveal" style="font-style:italic; color:rgba(245,230,200,0.7); font-size:1.2rem; max-width:500px; margin:1rem auto 2rem; line-height:1.9">
+    May your 23rd year be as luminous as the moon you love,
+    as beautiful as the art you create,
+    and as wide open as the horizons you chase.
+  </p>
+  <p class="finale-from reveal">With love & starlight ✦</p>
+</section>
+
+<script>
+// ======= CURSOR =======
+const cursor = document.getElementById('cursor');
+const trail = document.getElementById('cursorTrail');
+let mx = 0, my = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+  setTimeout(() => {
+    trail.style.left = mx + 'px';
+    trail.style.top = my + 'px';
+  }, 80);
+});
+
+// ======= STAR CANVAS =======
+const canvas = document.getElementById('starCanvas');
+const ctx = canvas.getContext('2d');
+let stars = [], shootingStars = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function initStars() {
+  stars = [];
+  for (let i = 0; i < 260; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height * 0.85,
+      r: Math.random() * 1.8 + 0.3,
+      a: Math.random(),
+      speed: Math.random() * 0.008 + 0.002,
+      twinkleOffset: Math.random() * Math.PI * 2
+    });
+  }
+}
+initStars();
+
+function spawnShooting() {
+  if (Math.random() < 0.015) {
+    shootingStars.push({
+      x: Math.random() * canvas.width * 0.8,
+      y: Math.random() * canvas.height * 0.3,
+      len: Math.random() * 120 + 60,
+      speed: Math.random() * 10 + 8,
+      alpha: 1,
+      angle: Math.PI / 5 + Math.random() * 0.3
+    });
+  }
+}
+
+let t = 0;
+function animateStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  t += 0.016;
+
+  stars.forEach(s => {
+    const twinkle = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(t * s.speed * 30 + s.twinkleOffset));
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,248,235,${twinkle * s.a})`;
+    ctx.fill();
+  });
+
+  spawnShooting();
+  shootingStars = shootingStars.filter(ss => ss.alpha > 0.02);
+  shootingStars.forEach(ss => {
+    ctx.beginPath();
+    ctx.moveTo(ss.x, ss.y);
+    const ex = ss.x + Math.cos(ss.angle) * ss.len;
+    const ey = ss.y + Math.sin(ss.angle) * ss.len;
+    ctx.lineTo(ex, ey);
+    const grad = ctx.createLinearGradient(ss.x, ss.y, ex, ey);
+    grad.addColorStop(0, `rgba(255,248,235,${ss.alpha})`);
+    grad.addColorStop(1, 'rgba(255,248,235,0)');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ss.x += Math.cos(ss.angle) * ss.speed;
+    ss.y += Math.sin(ss.angle) * ss.speed;
+    ss.alpha -= 0.025;
+  });
+
+  requestAnimationFrame(animateStars);
+}
+animateStars();
+
+// ======= FLOATING PETALS =======
+function createPetals() {
+  const hero = document.getElementById('hero');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (Math.random() * 10 + 8) + 's';
+    p.style.animationDelay = (Math.random() * 12) + 's';
+    p.style.opacity = Math.random() * 0.5 + 0.1;
+    const scale = Math.random() * 1.5 + 0.5;
+    p.style.transform = `scale(${scale})`;
+    p.style.background = ['#c9997a','#e8c4b8','#d4a0c0','#c97d2e'][Math.floor(Math.random()*4)];
+    hero.appendChild(p);
+  }
+}
+createPetals();
+
+// ======= CONFETTI =======
+function createConfetti() {
+  const finale = document.getElementById('finale');
+  const colors = ['#c97d2e','#e8a84a','#f5e6c8','#c9997a','#e8c4b8','#d4a0c0'];
+  for (let i = 0; i < 30; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti-piece';
+    c.style.left = Math.random() * 100 + '%';
+    c.style.top = '-20px';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.animationDuration = (Math.random() * 4 + 4) + 's';
+    c.style.animationDelay = (Math.random() * 6) + 's';
+    c.style.borderRadius = Math.random() > 0.5 ? '50%' : '1px';
+    c.style.width = (Math.random() * 8 + 4) + 'px';
+    c.style.height = (Math.random() * 12 + 4) + 'px';
+    finale.appendChild(c);
+  }
+}
+createConfetti();
+
+// ======= SCROLL REVEAL =======
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+// ======= NAV DOTS =======
+const sections = ['hero','message','passions','moonphase','artist','travel','eyes','wishes','finale'];
+const dots = document.querySelectorAll('.nav-dot');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  sections.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.offsetTop - window.innerHeight / 2;
+    const bottom = top + el.offsetHeight;
+    if (scrollY >= top && scrollY < bottom) {
+      dots.forEach(d => d.classList.remove('active'));
+      if (dots[i]) dots[i].classList.add('active');
+    }
+  });
+});
+
+// ======= EYE HOVER =======
+const eyeSvg = document.getElementById('eyeSvg');
+if (eyeSvg) {
+  eyeSvg.addEventListener('mousemove', e => {
+    const rect = eyeSvg.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    // Subtle pupil follow
+    const cx = 160, cy = 80;
+    const dx = (x - cx) * 0.04;
+    const dy = (y - cy) * 0.04;
+    const pupil = eyeSvg.querySelector('circle[fill="url(#pupilGrad)"]');
+    if (pupil) {
+      pupil.setAttribute('cx', Math.max(130, Math.min(190, cx + dx)));
+      pupil.setAttribute('cy', Math.max(55, Math.min(105, cy + dy)));
+    }
+  });
+  eyeSvg.addEventListener('mouseleave', () => {
+    const pupil = eyeSvg.querySelector('circle[fill="url(#pupilGrad)"]');
+    if (pupil) {
+      pupil.setAttribute('cx', 160);
+      pupil.setAttribute('cy', 80);
+    }
+  });
+}
+</script>
+</body>
+</html>
